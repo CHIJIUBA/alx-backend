@@ -4,7 +4,7 @@ import math
 from typing import List, Tuple
 
 
-def index_range(self, page: int, page_size: int) -> Tuple[int, int]:
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """Returns the start and end index pagination"""
     end_index = page * page_size
     start_index = end_index - page_size
@@ -35,7 +35,6 @@ class Server:
         """
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
-        self.dataset()
         if self.dataset() is None:
             return []
         my_tuple = index_range(page, page_size)
