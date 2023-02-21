@@ -35,6 +35,7 @@ class Server:
         """
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
+        self.dataset()
         if self.dataset() is None:
             return []
         my_tuple = index_range(page, page_size)
